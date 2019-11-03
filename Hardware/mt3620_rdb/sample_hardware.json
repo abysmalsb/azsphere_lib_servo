@@ -1,0 +1,26 @@
+{
+    "Metadata": {
+        "Type": "Azure Sphere Hardware Definition",
+        "Version": 1
+    },
+    "Description":
+    {
+        "Name": "Sample hardware abstraction for MT3620 RDB",
+        "MainCoreHeaderFileTopContent": [
+            "/* Copyright (c) Microsoft Corporation. All rights reserved.",
+            "   Licensed under the MIT License. */",
+            "",
+            "// This file defines the mapping from the MT3620 reference development board (RDB) to the",
+            "// 'sample hardware' abstraction used by the samples at https://github.com/Azure/azure-sphere-samples.",
+            "// Some peripherals are on-board on the RDB, while other peripherals must be attached externally if needed.",
+            "// See TODO(85663) for more information on how to use hardware abstractions",
+            "// to enable apps to work across multiple hardware variants."
+        ]
+    },
+    "Imports" : [ {"Path": "mt3620_rdb.json"} ],
+    "Peripherals": [
+		{"Name": "PWM_CONTROLLER", "Type": "Pwm", "Mapping": "MT3620_RDB_PWM_CONTROLLER0", "Comment": "MT3620 RDB: PWM controller for the servos"},
+        {"Name": "SERVO_PWM_CHANNEL", "Type": "int", "Mapping": "MT3620_PWM_CHANNEL0", "Comment": "MT3620 RDB: Channel 0 for the general servo. In the app manifest, it is only necessary to request the capability for the PWM Controller, PWM_CONTROLLER."},
+		{"Name": "LCD_I2C", "Type": "I2cMaster", "Mapping": "MT3620_RDB_HEADER4_ISU2_I2C", "Comment": "MT3620 RDB: Connect Grove LCD with RGB Backlight using the Grove connector and a 5V VCC"}
+    ]
+}
