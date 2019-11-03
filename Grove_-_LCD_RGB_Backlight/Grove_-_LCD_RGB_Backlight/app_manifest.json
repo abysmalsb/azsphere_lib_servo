@@ -1,0 +1,11 @@
+{
+  "SchemaVersion": 1,
+  "Name" : "Grove_-_LCD_RGB_Backlight",
+  "ComponentId" : "ed30dad4-195e-4e6e-b942-65e0815d460b",
+  "EntryPoint": "/bin/app",
+  "Capabilities": {
+    "I2cMaster": [ "$LCD_I2C" ],
+    "WifiConfig": false
+  },
+  "ApplicationType":"Default"
+}
