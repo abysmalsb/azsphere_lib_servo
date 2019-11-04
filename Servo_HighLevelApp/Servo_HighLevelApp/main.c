@@ -43,11 +43,11 @@ static const unsigned int maxDutyCycleNs = 2400000;
 static const unsigned int minDutyCycleNs = 600000;
 static const int minAngle = 0;
 static const int maxAngle = 180;
-static int stepIncrementAngle = 1;
-static int angle = 0;
+static float stepIncrementAngle = 0.5f;
+static float angle = 0;
 
 // Timer state variables
-static const struct timespec stepIntervalNs = {.tv_sec = 0, .tv_nsec = 10000000};
+static const struct timespec stepIntervalNs = {.tv_sec = 0, .tv_nsec = 5000000};
 
 // Termination state
 static volatile sig_atomic_t terminationRequired = false;

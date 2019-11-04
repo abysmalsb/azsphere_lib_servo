@@ -24,7 +24,7 @@ struct SERVO_Config
 
 extern int SERVO_Init(struct SERVO_Config* config, struct _SERVO_State** state);
 
-extern int SERVO_SetAngle(struct _SERVO_State* servoState, int angle);
+extern int SERVO_SetAngle(struct _SERVO_State* servoState, float angle);
 
 extern int SERVO_Destroy(struct _SERVO_State* servoState);
 
